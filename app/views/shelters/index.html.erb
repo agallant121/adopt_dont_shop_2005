@@ -1,0 +1,9 @@
+<h3>Shelters:</h3>
+
+<div class="shelter-class">
+  <% @shelters.each do |shelter| %>
+    <p><%= shelter.name %></p>
+  <% end %>
+</div>
+
+<%= link_to 'New Shelter', '/shelters/new' %>
