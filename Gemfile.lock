@@ -190,6 +190,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-unknown
 
 DEPENDENCIES
   byebug
