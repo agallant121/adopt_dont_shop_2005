@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Shelter.destroy_all
+Pet.destroy_all
+
 @shop_1 = Shelter.create(name: "Al's Pals",
                          address: '123 First Street',
                          city: 'Bangor',
