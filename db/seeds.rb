@@ -28,14 +28,17 @@ Pet.destroy_all
 @pet_1 = @shop_1.pets.create(image: 'https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg',
                             name: 'Molly',
                             age: 3,
-                            sex: 'F')
+                            sex: 'F',
+                            description: 'Great dog')
 
 @pet_2 = @shop_2.pets.create(image: 'https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg',
                             name: 'Penny',
                             age: 3,
-                            sex: 'F')
+                            sex: 'F',
+                            description: 'Okay dog')
 
 @pet_3 = @shop_3.pets.create(image: 'https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg',
                             name: 'Abby',
                             age: 3,
-                            sex: 'F')
+                            sex: 'F',
+                            description: 'This dog is nice')
