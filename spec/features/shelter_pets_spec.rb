@@ -11,17 +11,20 @@ RSpec.describe 'As a visitor' do
     @pet_1 = @shop_1.pets.create(image: 'https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg',
                                  name: 'Molly',
                                  age: 3,
-                                 sex: 'F')
+                                 sex: 'F',
+                                 description: 'Nice dog')
 
     @pet_2 = @shop_1.pets.create(image: 'https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg',
                                  name: 'Penny',
                                  age: 3,
-                                 sex: 'F')
+                                 sex: 'F',
+                                 description: 'Nice dog')
 
     @pet_3 = @shop_1.pets.create(image: 'https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg',
                                  name: 'Abby',
                                  age: 3,
-                                 sex: 'F')
+                                 sex: 'F',
+                                 description: 'Nice dog')
 
     visit "/shelters/#{@shop_1.id}/pets"
   end
@@ -31,15 +34,18 @@ RSpec.describe 'As a visitor' do
     expect(page).to have_content(@pet_1.name)
     expect(page).to have_content(@pet_1.age)
     expect(page).to have_content(@pet_1.sex)
+    expect(page).to have_content(@pet_1.description)
 
     # expect(page).to have_content(@pet_2.image)
     expect(page).to have_content(@pet_2.name)
     expect(page).to have_content(@pet_2.age)
     expect(page).to have_content(@pet_2.sex)
+    expect(page).to have_content(@pet_2.description)
 
     # expect(page).to have_content(@pet_3.image)
     expect(page).to have_content(@pet_3.name)
     expect(page).to have_content(@pet_3.age)
     expect(page).to have_content(@pet_3.sex)
+    expect(page).to have_content(@pet_3.description)
   end
 end
