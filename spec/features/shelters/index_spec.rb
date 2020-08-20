@@ -29,8 +29,6 @@ RSpec.describe 'As a visitor' do
   end
 
   it "has a link to create a new shelter" do
-
-    click_link 'New Shelter'
-    
+    expect(page).to have_link 'New Shelter'
   end
 end
