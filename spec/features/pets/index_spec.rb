@@ -29,7 +29,7 @@ RSpec.describe 'As a visitor' do
                                  age: 3,
                                  sex: 'F',
                                  description: 'Nice dog')
-                                 
+
     @pet_3 = @shop_3.pets.create(image: 'https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg',
                                  name: 'Abby',
                                  age: 3,
@@ -53,5 +53,15 @@ RSpec.describe 'As a visitor' do
     expect(page).to have_content(@pet_3.name)
     expect(page).to have_content(@pet_3.age)
     expect(page).to have_content(@pet_3.sex)
+  end
+
+  it "can delete a pet" do
+    expect(Pet.all.count).to eq(3)
+
+    visit "/pets/#{@pet_1.id}"
+    click_link 'Delete'
+
+    expect(current_path).to eq('/pets')
+    expect(Pet.all.count).to eq(2)
   end
 end
