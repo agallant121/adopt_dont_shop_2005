@@ -23,4 +23,15 @@ RSpec.describe 'As a visitor' do
     expect(page).to have_content(@pet_1.description)
     expect(page).to have_content(@pet_1.adopted?)
   end
+
+  it "has a link to update the pet's information" do
+    click_link('Update Pet')
+
+    fill_in :name, with: 'Bobby'
+    click_button('Submit')
+
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to_not have_content('Molly')
+    expect(page).to have_content('Bobby')
+  end
 end
