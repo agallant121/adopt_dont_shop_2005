@@ -1,9 +1,10 @@
 <h3>Shelters:</h3>
 
-<div class="shelter-class">
   <% @shelters.each do |shelter| %>
-    <p><%= shelter.name %></p>
+    <section id='shelter-<%= shelter.id %>>
+      <p><%= shelter.name %></p>
+      <p><%= link_to 'Edit', "/shelters/#{shelter.id}/edit" %></p>
+    </section>
   <% end %>
-</div>
 
 <%= link_to 'New Shelter', '/shelters/new' %>
