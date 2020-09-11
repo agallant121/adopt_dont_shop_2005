@@ -1,0 +1,11 @@
+<%= form_tag "/pets/#{@pet.id}", method: :patch do %>
+  <p><%= label_tag :name %>
+  <%= text_field_tag :name, @pet ? @pet.name : "" %></p>
+  <p><%= label_tag :age %>
+  <%= text_field_tag :age, @pet ? @pet.age : "" %></p>
+  <p><%= label_tag :sex %>
+  <%= text_field_tag :sex, @pet ? @pet.sex : "" %></p>
+  <p><%= label_tag :description %>
+  <%= text_field_tag :description, @pet ? @pet.description : "" %></p>
+  <%= submit_tag 'Submit' %>
+<% end %>
